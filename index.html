@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Meghaa Makeovers – Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- header -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-black">Meghaa</span> <span class="logo-blue">Makeovers</span>
+    </div>
+    <div class="header-actions">
+      <button class="install-btn" id="installTopBtn"><i class="fa-solid fa-download"></i> Install</button>
+      <button class="hamburger" id="hamburgerBtn"><i class="fa-regular fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- full‑screen hamburger menu -->
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="close-menu" id="closeMenu"><i class="fa-regular fa-xmark"></i></button>
+    <ul class="menu-items">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Book Appointment</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- hero slider -->
+    <section class="hero-slider">
+      <div class="slides" id="slider">
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&auto=format');">
+          <div class="slide-content">
+            <h1>Luxury Beauty & Bridal Studio</h1>
+            <p>Experience premium beauty at Meghaa Makeovers</p>
+            <div style="display: flex; gap: 8px;">
+              <a href="booking.html" class="btn btn-gold" style="padding: 0.6rem 1.2rem;">Book</a>
+              <a href="services.html" class="btn btn-outline" style="background: transparent; color: white; border-color: white;">Services</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&auto=format');">
+          <div class="slide-content">
+            <h1>Flawless bridal looks</h1>
+            <p>Let our artists create magic</p>
+            <a href="booking.html" class="btn btn-gold">Bridal</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&auto=format');">
+          <div class="slide-content">
+            <h1>Skincare & Spa</h1>
+            <p>Radiance begins here</p>
+          </div>
+        </div>
+      </div>
+      <div class="slider-arrow prev" onclick="moveSlide(-1)">❮</div>
+      <div class="slider-arrow next" onclick="moveSlide(1)">❯</div>
+      <div class="dots" id="dots"></div>
+      <span class="dynamic-placeholder">{{hero_slides}}</span>
+    </section>
+
+    <div class="container">
+      <!-- featured services -->
+      <h2>Featured services</h2>
+      <div class="grid-2" id="featuredServices">
+        <span class="dynamic-placeholder">{{featured_services}}</span>
+        <!-- demo cards – will be replaced by PHP -->
+        <div class="service-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=200');"></div><div class="card-content"><div class="card-title">Bridal Makeup</div><div class="card-price">₹12,000</div><div class="card-desc">Airbrush finish</div><a href="booking.html" class="btn" style="padding:0.3rem 1rem;">Book</a></div></div>
+        <div class="service-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=200');"></div><div class="card-content"><div class="card-title">Party Makeup</div><div class="card-price">₹4,500</div><div class="card-desc">Glam look</div><a href="booking.html" class="btn">Book</a></div></div>
+        <div class="service-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200');"></div><div class="card-content"><div class="card-title">Hair Styling</div><div class="card-price">₹2,500</div><div class="card-desc">Blowdry/curls</div><a href="booking.html" class="btn">Book</a></div></div>
+        <div class="service-card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=200');"></div><div class="card-content"><div class="card-title">Hair Spa</div><div class="card-price">₹1,800</div><div class="card-desc">Nourishing</div><a href="booking.html" class="btn">Book</a></div></div>
+      </div>
+
+      <!-- offers preview -->
+      <div class="offer-highlight">
+        <span class="dynamic-placeholder">{{offers}}</span>
+        <h3 style="color:white;">Special offers</h3>
+        <p>20% off on bridal trial + booking</p>
+        <a href="offers.html" class="btn btn-gold">View All Offers</a>
+      </div>
+
+      <!-- bridal highlight -->
+      <div style="background: #f0ebe1; border-radius: 30px; padding:1.5rem; margin:1.5rem 0;">
+        <div style="display:flex; gap:1rem; align-items:center;">
+          <div style="flex:1; background-image:url('https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=200'); height:120px; background-size:cover; border-radius:20px;"></div>
+          <div style="flex:2;"><h3>Bridal packages</h3><p>Customized trousseau</p><a href="booking.html" class="btn">Book Bridal</a></div>
+        </div>
+      </div>
+
+      <!-- gallery preview -->
+      <h2>Instagram moments</h2>
+      <div class="gallery-grid" id="galleryPreview">
+        <span class="dynamic-placeholder">{{gallery_images}}</span>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=200');"></div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=200');"></div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200');"></div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=200');"></div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=200');"></div>
+        <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=200');"></div>
+      </div>
+      <a href="gallery.html" class="btn btn-outline" style="margin:1rem 0;">View Full Gallery</a>
+
+      <!-- customer reviews -->
+      <h2>Kind words</h2>
+      <div class="review-carousel" id="reviewCarousel">
+        <span class="dynamic-placeholder">{{reviews}}</span>
+        <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>"Best bridal makeup!"</p><p><strong>– Anjali</strong></p></div>
+        <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div><p>"Loved the hair spa"</p><p><strong>– Priya</strong></p></div>
+        <div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p>"Elegant studio, very professional"</p><p><strong>– Riya</strong></p></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- bottom navigation -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active"><i class="fa-regular fa-house"></i><span>Home</span></a>
+    <a href="services.html" class="nav-item"><i class="fa-regular fa-spa"></i><span>Services</span></a>
+    <a href="booking.html" class="nav-item"><i class="fa-regular fa-calendar-check"></i><span>Book</span></a>
+    <a href="gallery.html" class="nav-item"><i class="fa-regular fa-image"></i><span>Gallery</span></a>
+    <a href="profile.html" class="nav-item"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+  </nav>
+
+  <!-- floating PWA button -->
+  <button class="pwa-install-floating" id="pwaInstallBtn"><i class="fa-regular fa-mobile-notch"></i> Install app</button>
+
+  <!-- footer -->
+  <footer class="footer" id="contact">
+    <div class="logo">
+      <span class="logo-black" style="color:white;">Meghaa</span> <span class="logo-blue">Makeovers</span>
+    </div>
+    <p style="opacity:0.8; margin:0.5rem 0 1rem;">Luxury beauty studio · bridal · spa</p>
+    <div style="display:flex; gap:1.5rem; margin:1rem 0;">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p><i class="fa-regular fa-phone"></i> +91 98765 43210 <br> <i class="fa-regular fa-envelope"></i> hello@meghaa.in</p>
+    <div style="background:#1f2b4a; height:80px; border-radius:20px; margin:1rem 0; display:flex; align-items:center; justify-content:center;">📍 map placeholder</div>
+    <p style="text-align:center; font-size:0.8rem;">© Meghaa Makeovers · <span class="dynamic-placeholder">{{year}}</span></p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('installTopBtn')?.addEventListener('click', ()=> {
+      alert('Install Meghaa Makeovers app (PWA prompt)');
+    });
+  </script>
+</body>
+</html>
