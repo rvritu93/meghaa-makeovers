@@ -11,8 +11,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="app-header"> <!-- same as others --> </header>
-  <div class="menu-overlay" id="menuOverlay"> <!-- same --> </div>
+  <header class="app-header">
+    <div class="logo"><span class="logo-black">Meghaa</span> <span class="logo-blue">Makeovers</span></div>
+    <div class="header-actions">
+      <button class="install-btn" id="installTopBtn"><i class="fa-solid fa-download"></i> Install</button>
+      <button class="hamburger" id="hamburgerBtn"><i class="fa-regular fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="close-menu" id="closeMenu"><i class="fa-regular fa-xmark"></i></button>
+    <ul class="menu-items">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Book Appointment</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="offers.html">Offers</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
   <main class="container">
     <h2>Our Work</h2>
@@ -41,6 +59,7 @@
     </div>
   </main>
 
+  <!-- bottom navigation -->
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item"><i class="fa-regular fa-house"></i><span>Home</span></a>
     <a href="services.html" class="nav-item"><i class="fa-regular fa-spa"></i><span>Services</span></a>
@@ -49,10 +68,26 @@
     <a href="profile.html" class="nav-item"><i class="fa-regular fa-user"></i><span>Profile</span></a>
   </nav>
 
+  <!-- floating PWA button -->
   <button class="pwa-install-floating" id="pwaInstallBtn"><i class="fa-regular fa-mobile-notch"></i> Install app</button>
-  <footer class="footer"> <!-- same as others --> </footer>
-  <script src="assets/js/app.js"></script>
-  <script> /* install button handler */ </script>
-</body>
 
+  <!-- footer -->
+  <footer class="footer" id="contact">
+    <div class="logo"><span class="logo-black" style="color:white;">Meghaa</span> <span class="logo-blue">Makeovers</span></div>
+    <p style="opacity:0.8; margin:0.5rem 0 1rem;">Luxury beauty studio · bridal · spa</p>
+    <div style="display:flex; gap:1.5rem; margin:1rem 0;">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p><i class="fa-regular fa-phone"></i> +91 98765 43210 <br> <i class="fa-regular fa-envelope"></i> hello@meghaa.in</p>
+    <div style="background:#1f2b4a; height:80px; border-radius:20px; margin:1rem 0; display:flex; align-items:center; justify-content:center;">📍 map placeholder</div>
+    <p style="text-align:center; font-size:0.8rem;">© Meghaa Makeovers · <span class="dynamic-placeholder">{{year}}</span></p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('installTopBtn')?.addEventListener('click', ()=> alert('Install Meghaa Makeovers app (PWA prompt)'));
+  </script>
+</body>
 </html>
